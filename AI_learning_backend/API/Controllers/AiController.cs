@@ -12,6 +12,7 @@ public class AiController : ControllerBase
     {
         _aiService = aiService;
         _logger = logger;
+
     }
 
     [HttpPost("chat")]

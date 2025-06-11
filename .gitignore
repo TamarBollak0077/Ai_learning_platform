@@ -405,4 +405,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
+API/appsettings.json
+AI_learning_backend/API/appsettings.json

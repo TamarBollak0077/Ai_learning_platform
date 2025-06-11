@@ -2,6 +2,7 @@
 using BL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -64,6 +65,11 @@ namespace API.Controllers
 
             var content = new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync("https://api.openai.com/v1/chat/completions", content);
+
+            if (response.StatusCode == HttpStatusCode.TooManyRequests)
+            {
+                return StatusCode(429, "הגעת למגבלת שימוש ב-OpenAI. נסה שוב מאוחר יותר.");
+            }
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsStringAsync();

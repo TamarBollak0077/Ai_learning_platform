@@ -18,9 +18,9 @@ namespace BL.Services
         {
             _httpClient = httpClient;
             _logger = logger;
-            _apiKey = config["OpenAI:ApiKey"] ?? throw new Exception("Missing API key");
+            Console.WriteLine("OpenAI API Key starts with: " +
+     (string.IsNullOrEmpty(_apiKey) ? "(empty)" : _apiKey.Substring(0, Math.Min(5, _apiKey.Length))));
         }
-
 
         public async Task<string> GetAiResponseAsync(string prompt)
         {
@@ -30,9 +30,9 @@ namespace BL.Services
             {
                 Model = "gpt-3.5-turbo",
                 Messages = new List<ChatMessage>
-        {
-            new ChatMessage { Role = "user", Content = prompt }
-        }
+                {
+                    new ChatMessage { Role = "user", Content = prompt }
+                }
             };
 
             var json = JsonSerializer.Serialize(requestBody);
@@ -85,37 +85,35 @@ namespace BL.Services
             throw new Exception("Exceeded maximum retry attempts for OpenAI API call.");
         }
 
-
-
         // DTOs עבור הבקשה והתשובה
         public class ChatRequest
         {
             [JsonPropertyName("model")]
-            public string Model { get; set; }
+            public string Model { get; set; } = string.Empty;
 
             [JsonPropertyName("messages")]
-            public List<ChatMessage> Messages { get; set; }
+            public List<ChatMessage> Messages { get; set; } = new();
         }
 
         public class ChatMessage
         {
             [JsonPropertyName("role")]
-            public string Role { get; set; }
+            public string Role { get; set; } = string.Empty;
 
             [JsonPropertyName("content")]
-            public string Content { get; set; }
+            public string Content { get; set; } = string.Empty;
         }
 
         public class ChatResponse
         {
             [JsonPropertyName("choices")]
-            public List<ChatChoice> Choices { get; set; }
+            public List<ChatChoice> Choices { get; set; } = new();
         }
 
         public class ChatChoice
         {
             [JsonPropertyName("message")]
-            public ChatMessage Message { get; set; }
+            public ChatMessage Message { get; set; } = new();
         }
     }
 }
