@@ -268,9 +268,9 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-*.mdf
-*.ldf
-*.ndf
+# *.mdf
+# *.ldf
+# *.ndf
 
 # Business Intelligence projects
 *.rdl.data
@@ -407,3 +407,4 @@ FodyWeavers.xsd
 *.sln.iml
 API/appsettings.json
 AI_learning_backend/API/appsettings.json
+API/Properties/launchSettings.json
