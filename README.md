@@ -1,38 +1,51 @@
 
-# AI-Driven Learning Platform (Mini MVP)
+# AI Learning Platform – Root Repository
 
-## Overview
-This project is a mini learning platform that enables users to select learning topics by category and sub-category, send prompts to an AI service to generate lessons, and view their learning history. The system includes a REST API backend, AI integration, a PostgreSQL database, and a simple React frontend dashboard.
+Welcome to the **main repository** of the AI-powered Learning Platform.
 
-## Features
-- User registration and management
-- Selection of learning categories and sub-categories
-- Submitting prompts to AI and receiving lesson responses
-- Viewing personal learning history
-- Admin dashboard to review users and their prompt history
+This project is divided into two main components:
 
-## Technologies Used
-- Backend: C# (.NET 8)
-- AI Integration: OpenAI GPT API
-- Database: SQL Server (with Entity Framework Core ORM)
-- Frontend: React.js
-- Version control: Git and GitHub
+1. **Frontend** – React + TypeScript client
+2. **Backend** – .NET 8 Web API using ASP.NET Core
 
-## Project Structure
-- `API/` - Backend REST API with controllers, services, and models
-- `DAL/` - Data Access Layer including database context and entities
-- `BL/` - Business Logic Layer handling AI calls and core logic
-- `Frontend/` - React app for user interface and dashboard
+---
 
-## Setup Instructions
+## 📁 Project Structure
 
-### Prerequisites
-- .NET 8 SDK
-- Node.js (for React frontend)
-- SQL Server or compatible database
-- OpenAI API key
+AI-learning-platform/
+├── Ai-learning-frontend/ ← React client application
+│ └── README.md ← Frontend usage guide
+│
+├── AI_learning_backend/ ← ASP.NET Core backend API
+│ └── README.md ← Backend usage guide
+│
+└── README.md ← This general README
 
-### Backend
-1. Clone the repo:
-   ```bash
-   git clone https://github
+
+---
+
+## 📚 Detailed Documentation
+
+- 🔗 [Frontend README (React)](https://github.com/TamarBollak0077/Ai_learning_platform.git/blob/main/Ai-learning-frontend/README.md)
+- 🔗 [Backend README (.NET)](https://github.com/TamarBollak0077/Ai_learning_platform.git)/blob/main/AI_learning_backend/README.md)
+
+---
+
+## 🎯 Project Purpose
+
+The platform allows users to:
+- Submit prompts to OpenAI for validation
+- View personal prompt history
+- Manage users, categories, and subcategories
+- Use an admin dashboard for advanced management
+
+---
+
+## 👨‍💻 Contributing
+
+- Pull requests are welcome.
+- For major changes, please open an issue first.
+- Please refer to the frontend and backend README files before starting work.
+
+---
+
