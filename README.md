@@ -26,8 +26,8 @@ AI-learning-platform/
 
 ## 📚 Detailed Documentation
 
-- 🔗 [Frontend README (React)](https://github.com/TamarBollak0077/Ai_learning_platform.git/blob/main/Ai-learning-frontend/README.md)
-- 🔗 [Backend README (.NET)](https://github.com/TamarBollak0077/Ai_learning_platform.git)/blob/main/AI_learning_backend/README.md)
+- 🔗 [Frontend README (React)](https://github.com/TamarBollak0077/Ai_learning_platform/blob/main/Ai-learning-frontend/README.md)
+- 🔗 [Backend README (.NET)](https://github.com/TamarBollak0077/Ai_learning_platform/blob/main/AI_learning_backend/README.md)
 
 ---
 
