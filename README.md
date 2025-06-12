@@ -11,7 +11,7 @@ This project is divided into two main components:
 ---
 
 ## 📁 Project Structure
-
+```
 AI-learning-platform/
 ├── Ai-learning-frontend/ ← React client application
 │ └── README.md ← Frontend usage guide
@@ -20,7 +20,7 @@ AI-learning-platform/
 │ └── README.md ← Backend usage guide
 │
 └── README.md ← This general README
-
+```
 
 ---
 
