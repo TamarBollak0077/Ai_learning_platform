@@ -7,12 +7,6 @@ export const fetchCategories = async () => {
 };
 
 export const fetchSubCategories = async (categoryId) => {
-  if (categoryId) {
-    const res = await axios.get(`${API_URL}/subCategory/${categoryId}`);
-    return res.data;
-  } else {
-    const res = await axios.get(`${API_URL}/subCategory`);
-    return res.data;
-  }
+  return axios.get(`/api/subCategory/${categoryId}`).then((res) => res.data);
 };
 

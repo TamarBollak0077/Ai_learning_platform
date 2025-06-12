@@ -2,11 +2,8 @@
 using BL.DTO.DTOs;
 using BL.DTOs;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BL
 {
@@ -14,8 +11,8 @@ namespace BL
     {
         public MappingProfile()
         {
-            CreateMap<Category, CategoryDTO>();  // מיפוי Entity ל-DTO
-            CreateMap<CategoryDTO, Category>();  // מיפוי הפוך אם צריך
+            CreateMap<Category, CategoryDTO>();
+            CreateMap<CategoryDTO, Category>();
 
             CreateMap<User, UserDTO>();
             CreateMap<UserDTO, User>();
@@ -23,10 +20,11 @@ namespace BL
             CreateMap<SubCategory, SubCategoryDTO>();
             CreateMap<SubCategoryDTO, SubCategory>();
 
-            CreateMap<Prompt, PromptDTO>();
-            CreateMap<PromptDTO, Prompt>();
-
-
+            // מיפוי מפורש לשדה Prompt
+            CreateMap<Prompt, PromptDTO>()
+                .ForMember(dest => dest.Prompt, opt => opt.MapFrom(src => src.Prompt1));
+            CreateMap<PromptDTO, Prompt>()
+                .ForMember(dest => dest.Prompt1, opt => opt.MapFrom(src => src.Prompt));
         }
     }
 }
