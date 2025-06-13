@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./AI_learning_backend
+    ports:
+      - "5217:5217"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./AI_learning_backend:/app
+    working_dir: /app
+    command: ["dotnet", "run"]
+
+  frontend:
+    build: ./Ai-learning-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Ai-learning-frontend:/app
+    working_dir: /app
+    command: ["npm", "run", "dev"]
