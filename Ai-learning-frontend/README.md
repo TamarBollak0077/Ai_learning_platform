@@ -4,7 +4,7 @@ A React + TypeScript client for an AI-based learning system.
 
 ---
 
-## Main Technologies
+## 🛠️ Main Technologies
 
 - **React** (with TypeScript)
 - **Redux Toolkit** (state management)
@@ -14,10 +14,11 @@ A React + TypeScript client for an AI-based learning system.
 - **Tailwind CSS** (styling)
 - **Jest** (unit testing, if present)
 - **ESLint + Prettier** (optional, code quality)
+- **Docker** (optional containerization)
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 Ai-learning-frontend/
@@ -32,6 +33,7 @@ Ai-learning-frontend/
 │
 ├── public/
 ├── .env.example            # Example environment variables
+├── Dockerfile              # Docker configuration
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
@@ -39,75 +41,89 @@ Ai-learning-frontend/
 
 ---
 
-## Setup & Running
+## 🚀 Setup & Running Locally
 
-1. **Copy `.env.example` to `.env`**  
-   And set your API URL:
-   ```
-   VITE_API_URL=http://localhost:5217/api
-   ```
+### 1. Copy `.env.example` to `.env`
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Set your backend API URL:
+```env
+VITE_API_URL=http://localhost:5217/api
+```
 
-3. **Run in development**
-   ```bash
-   npm run dev
-   ```
+### 2. Install dependencies
 
-4. **Run tests (if present)**
-   ```bash
-   npm test
-   ```
+```bash
+npm install
+```
 
----
+### 3. Run in development
 
-## Main Features
+```bash
+npm run dev
+```
 
-- **User registration and login** (with admin support)
-- **Send prompts to AI (OpenAI)**
-- **Personal prompt history**
-- **Admin page – view all prompts**
-- **Filter by category/user/sub-category**
-- **Responsive design with Tailwind**
+### 4. Run tests (if present)
+
+```bash
+npm test
+```
 
 ---
 
-## Environment Variables
+## 🐳 Running with Docker
 
-- `VITE_API_URL` – Backend API URL
-- **Never put OpenAI API keys in the frontend!**
+To build and run the frontend using Docker:
 
----
+```bash
+docker build -t ai-frontend ./Ai-learning-frontend
+docker run -p 5173:5173 ai-frontend
+```
 
-## Development Notes
+Or if using Docker Compose from the root directory:
 
-- All API calls are in `src/api`.
-- User/session management via Redux + localStorage.
-- All data types are in `src/types/models.ts`.
-- Do not commit secrets – only use `.env` (which is gitignored).
+```bash
+docker-compose up --build
+```
 
----
-
-## Testing
-
-- Unit tests (if present) are in `src/__tests__` or files with `.test.ts(x)`.
-- Run tests with `npm test`.
+> Make sure the backend is running and accessible at the URL defined in your `.env`.
 
 ---
 
-## Contribution & Maintenance
+## 🔐 Environment Variables
 
-- Use clear variable names, clean code, and remove unnecessary comments.
-- Update `.env.example` if you add/change environment variables.
+- `VITE_API_URL` – Backend API URL (e.g., http://localhost:5217/api)
+- **Do not include API keys or secrets in frontend `.env` files**
 
 ---
 
-## Authors
+## 🔎 Development Notes
+
+- All API calls are located in `src/api`
+- User/session state is managed via Redux and localStorage
+- All shared types and models are in `src/types/models.ts`
+- Do not commit sensitive information – `.env` is in `.gitignore`
+
+---
+
+## 🧪 Testing
+
+- Unit tests (if present) live in `src/__tests__` or files ending in `.test.ts(x)`
+- Run tests with:
+  ```bash
+  npm test
+  ```
+
+---
+
+## 🙌 Contribution & Maintenance
+
+- Use clear variable names and maintain clean, readable code
+- Remove unused code and console logs
+- Update `.env.example` when adding new environment variables
+
+---
+
+## 👩‍💻 Authors
 
 - Developed by [Your Name/Team]
 - For questions: [your email/contact]
-
----
