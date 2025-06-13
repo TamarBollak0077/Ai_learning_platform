@@ -13,13 +13,14 @@ This project is divided into two main components:
 ## 📁 Project Structure
 ```
 AI-learning-platform/
-├── Ai-learning-frontend/ ← React client application
-│ └── README.md ← Frontend usage guide
+├── Ai-learning-frontend/         ← React client application
+│   └── README.md                 ← Frontend usage guide
 │
-├── AI_learning_backend/ ← ASP.NET Core backend API
-│ └── README.md ← Backend usage guide
+├── AI_learning_backend/         ← ASP.NET Core backend API
+│   └── README.md                 ← Backend usage guide
 │
-└── README.md ← This general README
+├── docker-compose.yml           ← Runs frontend + backend
+└── README.md                    ← This general README
 ```
 
 ---
@@ -41,17 +42,10 @@ The platform allows users to:
 
 ---
 
-## 👨‍💻 Contributing
-
-- Pull requests are welcome.
-- For major changes, please open an issue first.
-- Please refer to the frontend and backend README files before starting work.
-
----
-
 ## ⚙️ Configuration
 
 Before running the project, make sure to set your environment variables.
+and make sure you have Docker and Docker Compose installed.
 
 ### Frontend
 
@@ -65,3 +59,11 @@ VITE_API_URL=http://localhost:5217/api
 The backend uses appsettings.json for configuration. A template file is available at appsettings.Development.example.json.
 Replace PATH_TO_YOUR_DB_FILE.mdf with your actual database file path.
 Make sure to set the OpenAI__ApiKey in your launch profile or user secret
+
+## 👨‍💻 Contributing
+
+- Pull requests are welcome.
+- For major changes, please open an issue first.
+- Please refer to the frontend and backend README files before starting work.
+
+---
