@@ -49,3 +49,19 @@ The platform allows users to:
 
 ---
 
+## ⚙️ Configuration
+
+Before running the project, make sure to set your environment variables.
+
+### Frontend
+
+Create a `.env` file in `Ai-learning-frontend/` with:
+
+```env
+VITE_API_URL=http://localhost:5217/api
+```
+### Backend
+
+The backend uses appsettings.json for configuration. A template file is available at appsettings.Development.example.json.
+Replace PATH_TO_YOUR_DB_FILE.mdf with your actual database file path.
+Make sure to set the OpenAI__ApiKey in your launch profile or user secret
